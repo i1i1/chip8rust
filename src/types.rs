@@ -108,7 +108,8 @@ impl Display {
     pub const SURH: u8 = 32;
 
     pub fn set_pixel(&mut self, x: u8, y: u8) -> bool {
-        todo!("Do set pixel")
+        self[(x, y)] = !self[(x, y)];
+        self[(x, y)] == Color::Black
     }
 
     pub fn update_screen(&self, win: &mut Window) -> Result<()> {
